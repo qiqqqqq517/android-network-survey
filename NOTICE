@@ -1,0 +1,32 @@
+Network Survey Android App — 简体中文修改版声明
+================================================
+
+原作品：android-network-survey
+原作者：Christian Rowlands (Craxiom)
+上游仓库：https://github.com/christianrowlands/android-network-survey
+原许可：Apache License, Version 2.0
+原版权声明：Copyright 2019 Christian Rowlands
+
+本仓库是上游作品的派生修改版（Modified Version），依据 Apache License 2.0 第 4 条分发：
+  (a) 随附 LICENSE 全文副本；
+  (b) 修改过的文件/资源在显著位置标注了改动；
+  (c) 保留源形式中的全部版权、专利、商标与署名声明。
+
+修改内容（修改日期：2026-11-12）：
+  1. 补全 networksurvey/src/main/res/values-zh-rCN/strings.xml 的全部简体中文翻译
+     （原 551 条 → 2195 条，修齐 40 条与英文相同的未译项及 7 个 plurals 子项）。
+  2. 把应用默认语言设为简体中文（LocaleManager 默认语言与默认资源）。
+  3. 新增简体中文文档（README.zh-CN.md 等）、fastlane zh-CN 商店元数据、
+     中文 issue 模板与隐私/安全策略中文版。
+  4. 未改动任何功能逻辑、协议、网络行为或数据采集范围。
+
+保留原样、不予翻译的专有名词（中国通用且无汉化空间）：
+  Wi-Fi、GNSS、GPS、SSID、BSSID、MAC、AP、MQTT、gRPC、TLS/SSL、JSON、CSV、
+  LTE、NR、GSM、CDMA、UMTS、PLMN、MCC、MNC、Cell ID、dBm、MHz、GHz、
+  NS Analytics、NS Scout、OpenCelliD、BeaconDB、Android、GitHub、ESP32 等。
+
+本修改版由本仓库维护者独立发布，与上游作者及 Craxiom 无隶属关系。
+本修改版的 APK 使用维护者自己的签名证书，与上游签名不同；请勿用上游公布的
+签名指纹校验本修改版 APK。
+
+完整许可条款见同目录 LICENSE 文件。

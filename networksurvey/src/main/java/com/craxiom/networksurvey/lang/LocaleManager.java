@@ -35,8 +35,8 @@ public class LocaleManager
     {
         if (!prefs.contains(c.getString(R.string.pref_key_language)))
         {
-            // User hasn't set the language manually, so use the default context and locale
-            return c;
+            // 简体中文修改版（2026-11-12）：默认语言改为简体中文，而非跟随系统默认。
+            return updateResources(c, Locale.SIMPLIFIED_CHINESE);
         }
         return updateResources(c, getLanguage(c));
     }
@@ -50,7 +50,12 @@ public class LocaleManager
     @SuppressWarnings("deprecation")
     private Context updateResources(Context context, String language)
     {
-        Locale locale = new Locale(language);
+        return updateResources(context, new Locale(language));
+    }
+
+    @SuppressWarnings("deprecation")
+    private Context updateResources(Context context, Locale locale)
+    {
         Locale.setDefault(locale);
 
         Resources res = context.getResources();

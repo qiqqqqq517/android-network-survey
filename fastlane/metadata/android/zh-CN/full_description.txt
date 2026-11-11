@@ -1,0 +1,43 @@
+<p><i>Network Survey</i> 把安卓手机变成无线网络探测工具。选择探测内容、选择数据去向，然后按「开始探测」。一次探测，一次开始、一次停止。</p>
+
+<p><b>记录什么</b></p>
+<ul>
+<li>蜂窝网络：GSM、CDMA、UMTS、LTE 与 5G NR 的服务小区和邻区，含载波聚合</li>
+<li>电话状态：无线电正在做什么</li>
+<li>Wi-Fi：接入点，含信道、安全类型与 802.11 标准</li>
+<li>蓝牙：经典蓝牙与 BLE 设备，含厂商名称与 Find My 追踪器</li>
+<li>GNSS：GPS、GLONASS、Galileo、北斗、QZSS、IRNSS 与 SBAS 卫星</li>
+<li>通话记录：通话、短信（SMS 和 MMS）与基站切换，保存到日志文件</li>
+</ul>
+
+<p><b>数据发到哪里</b></p>
+<p>可开启一个或同时开启多个目标端：</p>
+<ul>
+<li>日志文件：手机上的 CSV 文件</li>
+<li>NS Analytics：上传到你团队的工作区</li>
+<li>MQTT 数据流：JSON 记录发到你自己的代理服务器（例如 <a href="https://mosquitto.org">Mosquitto</a>），支持 TLS 与二维码配置</li>
+<li>gRPC 数据流：记录发到你自己的 gRPC 服务器</li>
+<li>社区数据库：OpenCelliD 与 BeaconDB</li>
+</ul>
+<p>消息格式：<a href="https://messaging.networksurvey.app/">messaging.networksurvey.app</a></p>
+
+<p><b>NS Analytics</b></p>
+<p>NS Analytics 是 Network Survey 数据的网页分析伴侣。已连接的手机把记录上传到你的工作区，无需再从手机拷贝文件。可在一张地图上查看所有探测，按记录类型打开分析页面，并导出原始记录。扫描工作区「设备」页面上的二维码即可连接手机。它是独立的网页服务：<a href="https://www.networksurvey.app/analytics">networksurvey.app/analytics</a></p>
+
+<p><b>还有更多</b></p>
+<ul>
+<li>信号：蜂窝网络、Wi-Fi、蓝牙与 GNSS 的实时视图，含 AGC 与 C/N0 趋势</li>
+<li>地图：来自 OpenCelliD 与 BTSearch 的基站，以及 NS Analytics 和社区数据库探测覆盖到的探测点，按信号强度着色</li>
+<li>发现已保存的 Wi-Fi 网络时发出关注列表提醒</li>
+<li>蜂窝网络工具、PLMN 查询、OUI 查询与 Wi-Fi 频谱</li>
+<li>可选 NS Scout：一块运行只接收固件的 ESP32 开发板，接管 Wi-Fi 且不受 Android 扫描限制，并新增 Wi-Fi 客户端与原始帧（pcapng）</li>
+<li>已保存的配置、浅色与深色主题、十二种强调色</li>
+<li>按记录类型与目标端配置的托管配置（MDM），以及 Intent API</li>
+</ul>
+
+<p><b>权限与隐私</b></p>
+<p>需要位置权限是因为每条记录都需要一个位置，且 Android 要求用它来扫描 Wi-Fi 与蓝牙。只有当你开启「自动开始探测」时才会申请后台位置权限。本构建不含 Firebase、分析或崩溃上报。<a href="https://www.networksurvey.app/privacy-policy">隐私政策</a></p>
+
+<p>部分反恶意软件应用会因 Network Survey 能读取短信而告警。它从不发送短信，也不安装任何东西。短信与通话记录权限仅用于通话记录（短信事件与对方号码），且仅在你开启通话记录、或设置了会自动记录通话记录的探测时才申请。两者都是可选的：没有它们，通话记录仍会记录通话与基站切换。<a href="https://github.com/christianrowlands/android-network-survey/discussions/35">在 GitHub 上了解更多</a></p>
+
+<p>开源（Apache 2.0）：<a href="https://github.com/christianrowlands/android-network-survey">github.com/christianrowlands/android-network-survey</a>。用户手册：<a href="https://networksurvey.app/manual">networksurvey.app/manual</a>。需要 Android 8.0 或更高版本。</p>

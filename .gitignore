@@ -197,3 +197,5 @@ __pycache__/
 tools/
 .im*
 docs/
+# Release signing keystore (never commit)
+release-keystore.jks
